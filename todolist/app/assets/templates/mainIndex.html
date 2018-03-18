@@ -1,0 +1,35 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container">
+	<div class="row">
+		<h2>List Group with Hidden Sub-menu</h2>
+	</div>
+    <div class="row">
+        {{data}}
+		<div class="col-sm-offset-4 col-sm-4">
+			<ul class="list-group">
+				<li class="list-group-item">
+					Vet Appointment!
+					<span class="show-menu">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+					</span>
+				</li>
+				<li class="list-group-item">
+					Complete Project
+					<span class="show-menu">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+					</span>
+				</li>
+				<li class="list-group-item">
+					Grab a Beer with Friends.
+					<span class="show-menu">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+					</span>
+				</li>
+            </ul>
+            <button ng-click = "add()" type="button" class="btn btn-link">Add Tarefa</button> 
+		</div>
+	</div>
+</div>
