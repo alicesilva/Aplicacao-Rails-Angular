@@ -1,5 +1,4 @@
 @TarefaCtrl = ($scope, $location, tarefaData) ->
-  $scope.title = "Oi"
 
   $scope.formData =
     newTarefaTitulo: ''
@@ -8,5 +7,6 @@
     
   $scope.createTarefa = ->
     tarefaData.createTarefa($scope.formData)
+    $location.url("/")
 
 @TarefaCtrl.$inject = ['$scope', '$location', 'tarefaData']

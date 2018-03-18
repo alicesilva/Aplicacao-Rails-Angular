@@ -11,9 +11,9 @@
 ToDo = angular.module('todolist', [])
 
 ToDo.config(['$routeProvider', ($routeProvider) ->
-  # Route for '/post'
+
   $routeProvider.when('/addTarefa', { templateUrl: '../assets/addTarefa.html', controller: 'TarefaCtrl' } )
-  # Default
+  
   $routeProvider.otherwise({ templateUrl: '../assets/mainIndex.html', controller: 'IndexCtrl' } )
 
 ])

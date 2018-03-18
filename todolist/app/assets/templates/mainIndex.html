@@ -3,25 +3,31 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!------ Include the above in your HEAD tag ---------->
+<div class="title">
+    <div class="container text-center">
+        <h1><strong>To do List</strong></h1>
+    </div>
+</div>
 
-    <div class="container">
-		<div class="row">
-			<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
-				<ul class="event-list" ng-repeat = "tarefa in data.tarefas">
-					<li>
-						<time datetime="2014-07-20 0000">
-							<span class="day"><strong>{{tarefa.data[8]}}{{tarefa.data[9]}}</strong></span>
-							<span ng-init = "converteData(tarefa.data[5],tarefa.data[6])" class="month">{{mes}}</span>
-						</time>
-						<div class="info">
-							<h2 class="title">{{tarefa.titulo}}</h2>
-							<p class="desc">{{tarefa.nota}}</p>
-							<ul>
-								<li style="width:50%;"><a ng-click = "excluirTarefa(tarefa)"><span class="fa fa-remove"></span> Excluir</a></li>
-							</ul>
-						</div>
-					</li>
-				</ul>
-			</div>
+<div class="container">
+    <div class="row">
+		<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+			<ul class="event-list" ng-repeat = "tarefa in data.tarefas">
+				<li>
+					<time datetime="2014-07-20 0000">
+						<span class="day"><strong>{{tarefa.data[8]}}{{tarefa.data[9]}}</strong></span>
+						<span ng-init = "converteData(tarefa.data[5],tarefa.data[6])" class="month">{{mes}}</span>
+					</time>
+					<div class="info">
+						<h2 class="title">{{tarefa.titulo}}</h2>
+						<p class="desc">{{tarefa.nota}}</p>
+						<ul>
+							<li style="width:50%;"><a ng-click = "excluirTarefa(tarefa)"><span class="fa fa-remove"></span> Excluir</a></li>
+						</ul>
+					</div>
+				</li>
+            </ul>
+            <button type="button" ng-click = "addTarefa()" class="btn btn-primary">Add Tarefa</button>
 		</div>
 	</div>
+</div>

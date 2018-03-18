@@ -1,6 +1,4 @@
 @IndexCtrl = ($scope, $location, tarefaData, $routeParams) ->
-  $scope.title = "To do list"
-
   $scope.data = tarefaData.data
 
   tarefaData.loadTarefas()

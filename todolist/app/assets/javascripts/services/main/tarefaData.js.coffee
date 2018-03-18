@@ -1,7 +1,7 @@
 angular.module('todolist').factory('tarefaData', ['$http', ($http) ->
   tarefaData =
     data:
-      tarefas: [{titulo: 'Loading', nota: ''}]
+      tarefas: [{titulo: '', nota: ''}]
     isLoaded: false
 
   tarefaData.loadTarefas = ->
@@ -9,43 +9,37 @@ angular.module('todolist').factory('tarefaData', ['$http', ($http) ->
       $http.get('./tarefas.json').success( (data) ->
         tarefaData.data.tarefas = data
         tarefaData.isLoaded = true
-        console.log('Successfully loaded posts.')
+        console.log('Tarefas carregadas.')
       ).error( ->
-        console.error('Failed to load posts.')
+        console.error('Erro ao carregar tarefas')
       )
 
   tarefaData.createTarefa = (newTarefa) ->
-    # Client-side data validation
     if newTarefa.newTarefaTitulo == '' or newTarefa.newTarefaNota == '' or newTarefa.newTarefaData == ''
-      alert('Neither the Title nor the Body are allowed to be left blank.')
+      alert('Preencha todos os campos')
       return false
 
-    # Create data object to POST
     data =
       new_tarefa:
         titulo: newTarefa.newTarefaTitulo
         nota: newTarefa.newTarefaNota
         data: newTarefa.newTarefaData
 
-    console.log(data)
-    # Do POST request to /posts.json
     $http.post('./tarefas.json', data).success( (data) ->
-      
-      # Add new post to array of posts
       tarefaData.data.tarefas.push(data)
-      console.log('Successfully created post.')
+      console.log('Tarefa criada.')
 
     ).error( ->
-      console.error('Failed to create new post.')
+      console.error('Erro ao criar tarefas.')
     )
   
   tarefaData.excluirTarefa = (id) ->
     $http.delete('./tarefas/'+id+'.json').success( (data) ->
       tarefaData.data.tarefas.pop(data)
-      console.log('Successfully created post.')
+      console.log('Tarefa excluída.')
 
     ).error( ->
-      console.error('Failed to create new post.')
+      console.error('Erro ao excluir tarefa.')
     )
   return tarefaData
 
