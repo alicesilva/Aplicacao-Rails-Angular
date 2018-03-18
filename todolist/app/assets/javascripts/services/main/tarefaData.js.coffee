@@ -16,7 +16,7 @@ angular.module('todolist').factory('tarefaData', ['$http', ($http) ->
 
   tarefaData.createTarefa = (newTarefa) ->
     # Client-side data validation
-    if newTarefa.newTarefaTitulo == '' or newTarefa.newTarefaNota == ''
+    if newTarefa.newTarefaTitulo == '' or newTarefa.newTarefaNota == '' or newTarefa.newTarefaData == ''
       alert('Neither the Title nor the Body are allowed to be left blank.')
       return false
 
@@ -25,6 +25,7 @@ angular.module('todolist').factory('tarefaData', ['$http', ($http) ->
       new_tarefa:
         titulo: newTarefa.newTarefaTitulo
         nota: newTarefa.newTarefaNota
+        data: newTarefa.newTarefaData
 
     console.log(data)
     # Do POST request to /posts.json
@@ -37,7 +38,15 @@ angular.module('todolist').factory('tarefaData', ['$http', ($http) ->
     ).error( ->
       console.error('Failed to create new post.')
     )
+  
+  tarefaData.excluirTarefa = (id) ->
+    $http.delete('./tarefas/'+id+'.json').success( (data) ->
+      tarefaData.data.tarefas.pop(data)
+      console.log('Successfully created post.')
 
+    ).error( ->
+      console.error('Failed to create new post.')
+    )
   return tarefaData
 
 ])

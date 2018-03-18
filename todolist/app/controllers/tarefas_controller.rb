@@ -31,4 +31,14 @@ class TarefasController < ApplicationController
             format.json { render :json => new_tarefa.as_json }
         end
     end
+
+    def destroy
+        tarefa = Tarefa.find(params[:id])
+
+        tarefa.destroy
+
+        respond_to do |format|
+            format.json { head :no_content }
+          end
+    end
 end

@@ -1,3 +1,10 @@
+<link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <a ng-click="navHome()" class="brand">My blog</a>
@@ -15,8 +22,11 @@
         <input class="span12" ng-model="formData.newTarefaTitulo" placeholder="New Post" type="text" maxlength="250">
         <label><strong>Body</strong></label>
         <textarea class="span12" style="height: 250px" ng-model="formData.newTarefaNota" placeholder="Type your post here..."></textarea>
+            <label>Data:</label>
+            <input type='text' ng-model = "formData.newTarefaData" data-date-format="DD-MM-YYYY" class="form-control" / placeholder= "DD-MM-YYYY">
         <button class="btn btn-primary" ng-click="createTarefa()">Create</button>
         <button class="btn btn-danger pull-right" ng-click="clearPost()">Clear post</button>
       </fieldset>
     </form>
-  </div>
+
+        </div>

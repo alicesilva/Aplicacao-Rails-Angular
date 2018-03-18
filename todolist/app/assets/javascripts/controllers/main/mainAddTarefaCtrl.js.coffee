@@ -4,7 +4,8 @@
   $scope.formData =
     newTarefaTitulo: ''
     newTarefaNota: ''
-
+    newTarefaData: ''
+    
   $scope.createTarefa = ->
     tarefaData.createTarefa($scope.formData)
 
