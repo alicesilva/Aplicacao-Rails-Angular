@@ -1,1 +1,1 @@
-# Aplicacao-Rails-Angular
+# To do list - Rails + AngularJS
