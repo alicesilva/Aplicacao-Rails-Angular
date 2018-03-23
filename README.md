@@ -1,4 +1,4 @@
-# To-Do: Tarefas - Rails + AngularJS
+# To Do: Tarefas - Rails + AngularJS
 
 ### 1) Rails version:
     4.2.1
