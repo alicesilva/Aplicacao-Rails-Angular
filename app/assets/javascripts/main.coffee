@@ -3,18 +3,16 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 #= require_self
 #= require_tree ./services/main
-#= require_tree ./filters/main
 #= require_tree ./controllers/main
-#= require_tree ./directives/main
 TarefasList = angular.module('TarefasList', [])
 
 # Sets up routing
 TarefasList.config(['$routeProvider', ($routeProvider) ->
   # Route for '/post'
-  $routeProvider.when('/addTarefa', { templateUrl: '../assets/addTarefa.html', controller: 'TarefaCtrl' } )
+  $routeProvider.when('/addTarefa', { templateUrl: '../assets/templates/addTarefa.html', controller: 'TarefaCtrl' } )
 
   # Default
-  $routeProvider.otherwise({ templateUrl: '../assets/mainIndex.html', controller: 'IndexCtrl' } )
+  $routeProvider.otherwise({ templateUrl: '../assets/templates/mainIndex.html', controller: 'IndexCtrl' } )
 
 ])
 
