@@ -7,6 +7,7 @@
   $scope.addTarefa = ->
     tarefaData.createTarefa($scope.tarefa)
     $location.url("/")
+    location.reload();
 
 @TarefaCtrl.$inject = ['$scope', '$location', 'tarefaData']
   

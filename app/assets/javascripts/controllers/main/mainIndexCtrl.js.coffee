@@ -1,6 +1,6 @@
 @IndexCtrl = ($scope, tarefaData, $location) ->
   $scope.title = "My blog"
-
+  
   $scope.data = tarefaData.data
 
   tarefaData.loadTarefas()
@@ -10,11 +10,11 @@
 
   print()
 
-  
   $scope.converteData = (n,m) ->
     text = ""
     text += n
     text += m
+    console.log(text)
     if(text == "01")
         $scope.mes = "janeiro"
     if(text == "02")

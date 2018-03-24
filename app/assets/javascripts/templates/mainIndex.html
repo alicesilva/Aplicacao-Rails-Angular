@@ -16,7 +16,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><button ng-click = "addTarefa()"class="btn btn-lg btn-primary">Add Atividade</button></li>
+                    <li><button ng-click = "addTarefa()"class="btn btn-lg btn-primary">Add Tarefa</button></li>
                 </ul>
             </div>
         </div>
@@ -32,7 +32,7 @@
                     <div class="panel panel-default panel-horizontal" style="width: 100%">
                         <div class="panel-heading text-center" style="width:10em;">
                             <span><p>Data limite:</p></span>
-                            <span ng-init = "converteData(tarefa.data[5],tarefa.data[6])">{{tarefa.data[8]}}{{tarefa.data[9]}} {{mes}} {{tarefa.data[0]}}{{tarefa.data[1]}}{{tarefa.data[2]}}{{tarefa.data[3]}}</span>
+                            <span>{{tarefa.data[8]}}{{tarefa.data[9]}}/{{tarefa.data[5]}}{{tarefa.data[6]}}/{{tarefa.data[0]}}{{tarefa.data[1]}}{{tarefa.data[2]}}{{tarefa.data[3]}}</span>
                         </div>
                         <div class="panel-body">                
                             <div class="col-xs-12 col-md-12 section-box">

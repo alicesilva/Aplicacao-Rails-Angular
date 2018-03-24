@@ -5,7 +5,7 @@ class TarefasController < ApplicationController
 
   # GET /todos
   def index
-    @tarefas = Tarefa.all
+    @tarefas = Tarefa.order(data: :asc)
     respond_to do |format|
         format.json { render json: @tarefas }
       end
